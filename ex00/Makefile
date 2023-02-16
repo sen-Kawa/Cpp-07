@@ -2,7 +2,7 @@ NAME = templates
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98 
+CFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 HEADER_DIR = ./header
 
@@ -28,6 +28,9 @@ $(OBJ_PREF): .build/%.o: src/%.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@ -I$(HEADER_DIR)
 
 all: $(NAME)
+
+run: all
+	@./$(NAME)
 
 clean:
 	@$(RM) $(OBJ_DIR)
