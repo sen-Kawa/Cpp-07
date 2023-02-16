@@ -29,6 +29,12 @@ $(OBJ_PREF): .build/%.o: src/%.cpp
 
 all: $(NAME)
 
+run: all
+	@./$(NAME)
+
+leaks: all
+	@valgrind --leak-check=full ./$(NAME)
+
 clean:
 	@$(RM) $(OBJ_DIR)
 
@@ -38,6 +44,5 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re
-
+.PHONY: all clean fclean re run leaks
 
