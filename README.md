@@ -16,3 +16,11 @@ If the two of them are equal, then it returns the second one.
 These functions can be called with any type of argument. The only requirement is
 that the two arguments must have the same type and must support all the comparison
 operators.
+
+### ex01 - Iter
+
+Implement a function template iter that takes 3 parameters and returns nothing.
+
+• The first parameter is the address of an array.
+• The second one is the length of the array.
+• The third one is a function that will be call on every element of the array.
