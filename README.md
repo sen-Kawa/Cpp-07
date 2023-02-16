@@ -1,2 +1,2 @@
-# Cpp-07
-Templates
+# C++ Module 07
+## Templates
