@@ -14,9 +14,9 @@ int main(void)
 
 	iter(evens, 5, print);
 
+	std::cout << YELLOW << "\n>> Test 2 - Chars" << DEF << std::endl;
 	char	vowels[5] = {'a', 'e', 'i', 'o', 'u'};
 
-	std::cout << YELLOW << "\n>> Test 2 - Chars" << DEF << std::endl;
 	iter(vowels, 5, print);
 
 	std::cout << YELLOW << "\n>> Test 3 - Strings" << DEF << std::endl;
@@ -26,4 +26,3 @@ int main(void)
 
 	return (0);
 }
-
