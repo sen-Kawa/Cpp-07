@@ -6,7 +6,6 @@ Array<T>::Array() : array(NULL), n(0)
 	return ;
 }
 
-
 template<typename T>
 Array<T>::Array(unsigned int n)
 {
@@ -22,6 +21,18 @@ Array<T>::Array(Array<T> const &src) : n(src.n)
 {
 	array = new T[n];
 	for (int i = 0; i < n; i++)
-		array[i] = obj.array[i];
+		array[i] = src.array[i];
+	return ;
+}
+
+template<typename T>
+Array<T>& Array<T>::operator=(Array<T> const &assign)
+{
+	if (array)
+		delete[] array;
+	n = assign.n;
+	array = new T[n];
+	for (int i = 0; i < n; i++)
+		array[i] = assign.array[i];
 	return ;
 }
