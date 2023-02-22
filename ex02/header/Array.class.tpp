@@ -50,7 +50,7 @@ Array<T>& Array<T>::operator=(Array<T> const &assign)
 }
 
 template<typename T>
-T& Array<T>::operator[](int index)
+T& Array<T>::operator[](unsigned int index)
 {
 	if (index > n || n == 0)
 		throw Array::OutOfBoundsException();

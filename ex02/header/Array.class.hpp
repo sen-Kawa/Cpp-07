@@ -22,7 +22,7 @@ class Array
 		Array(unsigned int n);
 		Array(Array const &src);
 		Array&	operator=(Array const &assign);
-		T&		operator[](int index);
+		T&		operator[](unsigned int index);
 		~Array(void);
 		
 		class OutOfBoundsException : public std::exception
