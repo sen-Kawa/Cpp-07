@@ -1,5 +1,6 @@
 #include "Array.class.hpp"
 
+template<typename T>
 unsigned int Array<T>::size() const
 {
 	return (n);
@@ -52,7 +53,7 @@ template<typename T>
 T& Array<T>::operator[](int index)
 {
 	if (index > n || n == 0)
-		throw Assign::OutOfBoundsException();
+		throw Array::OutOfBoundsException();
 	return (array[index]);
 }
 

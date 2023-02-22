@@ -3,6 +3,7 @@
 
 #include <exception>
 #include <iostream>
+#include <stdlib.h>
 #include "colours.hpp"
 
 template<typename T>
