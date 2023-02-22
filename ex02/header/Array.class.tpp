@@ -15,10 +15,8 @@ Array<T>::Array() : array(NULL), n(0)
 template<typename T>
 Array<T>::Array(unsigned int n)
 {
-	array = NULL;
-	if (n > 0)
-		array = new T[n];
-	n = n;
+	this->n = n;
+	array = new T[n];
 	for (unsigned int i = 0; i < n; i++)
 		array[i] = 0;
 	return ;
@@ -27,9 +25,7 @@ Array<T>::Array(unsigned int n)
 template<typename T>
 Array<T>::Array(Array<T> const &src) : n(src.n)
 {
-	array = NULL;
-	if (n > 0)
-		array = new T[n];
+	array = new T[n];
 	for (unsigned int i = 0; i < n; i++)
 		array[i] = src.array[i];
 	return ;
@@ -38,12 +34,9 @@ Array<T>::Array(Array<T> const &src) : n(src.n)
 template<typename T>
 Array<T>& Array<T>::operator=(Array<T> const &assign)
 {
-	if (array)
-		delete[] array;
+	delete[] this->array;
 	n = assign.n;
-	array = NULL;
-	if (n > 0)
-		array = new T[n];
+	array = new T[n];
 	for (unsigned int i = 0; i < n; i++)
 		array[i] = assign.array[i];
 	return (*this);
@@ -52,7 +45,7 @@ Array<T>& Array<T>::operator=(Array<T> const &assign)
 template<typename T>
 T& Array<T>::operator[](unsigned int index)
 {
-	if (index > n)
+	if (index > this->n - 1)
 		throw Array::OutOfBoundsException();
 	return (array[index]);
 }
@@ -60,7 +53,6 @@ T& Array<T>::operator[](unsigned int index)
 template<typename T>
 Array<T>::~Array()
 {
-	if (n > 0)
-		delete [] array;
+	delete [] array;
 	return ;
 }
