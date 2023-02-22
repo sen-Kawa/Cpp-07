@@ -9,7 +9,9 @@ Array<T>::Array() : array(NULL), n(0)
 template<typename T>
 Array<T>::Array(unsigned int n)
 {
-	array = new T[n];
+	array = NULL;
+	if (n > 0)
+		array = new T[n];
 	n = n;
 	for (int i = 0; i < n; i++)
 		array[i] = 0;
@@ -19,7 +21,9 @@ Array<T>::Array(unsigned int n)
 template<typename T>
 Array<T>::Array(Array<T> const &src) : n(src.n)
 {
-	array = new T[n];
+	array = NULL;
+	if (n > 0)
+		array = new T[n];
 	for (int i = 0; i < n; i++)
 		array[i] = src.array[i];
 	return ;
@@ -34,5 +38,13 @@ Array<T>& Array<T>::operator=(Array<T> const &assign)
 	array = new T[n];
 	for (int i = 0; i < n; i++)
 		array[i] = assign.array[i];
-	return ;
+	return (*this);
+}
+
+template<typename T>
+T& Array<T>::operator[](int index)
+{
+	if (index > n || n == 0)
+		throw Assign::OutOfBoundsException();
+	return (array[index]);
 }
