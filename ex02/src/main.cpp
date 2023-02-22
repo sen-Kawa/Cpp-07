@@ -7,6 +7,7 @@ int main(int, char**)
 {
 	std::cout << YELLOW << ">> Instantiating..." << DEF << std::endl;
     Array<int> numbers(MAX_VAL);
+	std::cout << CYAN << "Success" << DEF << std::endl;
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
 	std::cout << YELLOW << ">> Subscript operator [] overload test" << DEF << std::endl;
@@ -16,11 +17,14 @@ int main(int, char**)
         numbers[i] = value;
         mirror[i] = value;
     }
+	std::cout << CYAN << "Success" << DEF << std::endl;
     {
 		std::cout << YELLOW << ">> Assignment overload test" << DEF << std::endl;
         Array<int> tmp = numbers;
+	std::cout << CYAN << "Success" << DEF << std::endl;
 		std::cout << YELLOW << ">> Copy constructor test" << DEF << std::endl;
         Array<int> test(tmp);
+	std::cout << CYAN << "Success" << DEF << std::endl;
     }
 
     for (int i = 0; i < MAX_VAL; i++)
@@ -33,8 +37,9 @@ int main(int, char**)
     }
     try
     {
-		std::cout << YELLOW << ">> Exception borders test" << DEF << std::endl;
-        numbers[-2] = 0;
+		std::cout << YELLOW << ">> Exception borders test 8" << DEF << std::endl;
+        numbers[8] = 0;
+		std::cout << CYAN << "Success" << DEF << std::endl;
     }
     catch(const std::exception& e)
     {
@@ -42,8 +47,19 @@ int main(int, char**)
     }
     try
     {
-		std::cout << YELLOW << ">> Exception borders test" << DEF << std::endl;
+		std::cout << YELLOW << ">> Exception borders test -2" << DEF << std::endl;
+        numbers[-2] = 0;
+		std::cout << CYAN << "Success" << DEF << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
+    try
+    {
+		std::cout << YELLOW << ">> Exception borders test 750" << DEF << std::endl;
         numbers[MAX_VAL] = 0;
+		std::cout << CYAN << "Success" << DEF << std::endl;
     }
     catch(const std::exception& e)
     {
