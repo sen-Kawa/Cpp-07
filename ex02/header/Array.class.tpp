@@ -35,7 +35,9 @@ Array<T>& Array<T>::operator=(Array<T> const &assign)
 	if (array)
 		delete[] array;
 	n = assign.n;
-	array = new T[n];
+	array = NULL;
+	if (n > 0)
+		array = new T[n];
 	for (int i = 0; i < n; i++)
 		array[i] = assign.array[i];
 	return (*this);
@@ -47,4 +49,12 @@ T& Array<T>::operator[](int index)
 	if (index > n || n == 0)
 		throw Assign::OutOfBoundsException();
 	return (array[index]);
+}
+
+template<typename T>
+Array<T>::~Array()
+{
+	if (n > 0)
+		delete [] array;
+	return ;
 }
