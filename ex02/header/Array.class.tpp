@@ -1,5 +1,10 @@
 #include "Array.class.hpp"
 
+unsigned int Array<T>::size() const
+{
+	return (n);
+}
+
 template<typename T>
 Array<T>::Array() : array(NULL), n(0)
 {
