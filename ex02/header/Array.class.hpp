@@ -33,6 +33,6 @@ class Array
 				}	
 		};
 };
+#include "Array.class.tpp"
 
 #endif
-
