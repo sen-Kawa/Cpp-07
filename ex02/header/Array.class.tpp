@@ -19,7 +19,7 @@ Array<T>::Array(unsigned int n)
 	if (n > 0)
 		array = new T[n];
 	n = n;
-	for (int i = 0; i < n; i++)
+	for (unsigned int i = 0; i < n; i++)
 		array[i] = 0;
 	return ;
 }
@@ -30,7 +30,7 @@ Array<T>::Array(Array<T> const &src) : n(src.n)
 	array = NULL;
 	if (n > 0)
 		array = new T[n];
-	for (int i = 0; i < n; i++)
+	for (unsigned int i = 0; i < n; i++)
 		array[i] = src.array[i];
 	return ;
 }
@@ -44,7 +44,7 @@ Array<T>& Array<T>::operator=(Array<T> const &assign)
 	array = NULL;
 	if (n > 0)
 		array = new T[n];
-	for (int i = 0; i < n; i++)
+	for (unsigned int i = 0; i < n; i++)
 		array[i] = assign.array[i];
 	return (*this);
 }
