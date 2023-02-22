@@ -10,17 +10,18 @@ class Array
 {
 	private:
 
+		unsigned int	 n;
+		T*				array;
 
 	public:
 
-		int	size(void) const;
-
-		T&	operator[](int index);
+		unsigned int	size(void) const;
 
 		Array(void);
 		Array(unsigned int n);
 		Array(Array const &src);
 		Array&	operator=(Array const &assign);
+		T&		operator[](int index);
 		~Array(void);
 		
 		class OutOfBoundsException : public std::exception
