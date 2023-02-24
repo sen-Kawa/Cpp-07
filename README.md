@@ -26,3 +26,5 @@ Implement a function template iter that takes 3 parameters and returns nothing.
 • The second one is the length of the array.
 
 • The third one is a function that will be call on every element of the array.
+
+### ex02 - Class template
